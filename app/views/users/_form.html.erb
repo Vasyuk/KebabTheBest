@@ -13,30 +13,30 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :user_name %>
+    <%= form.text_field :name, id: :user_name, class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
+    <%= form.text_field :email, id: :user_email, class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :kebab %>
-    <%= form.check_box :kebab, id: :user_kebab %>
+    <%= form.check_box :kebab, id: :user_kebab, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :bio %>
-    <%= form.text_field :bio, id: :user_bio %>
+    <%= form.text_field :bio, id: :user_bio, class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :slack %>
-    <%= form.text_field :slack, id: :user_slack %>
+    <%= form.text_field :slack, id: :user_slack, class: 'form-control'%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

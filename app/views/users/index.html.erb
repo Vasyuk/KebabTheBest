@@ -3,7 +3,7 @@
 <h1>TOUS LES CORSAIRS</h1>
 
 <table>
-  <thead>
+  <!-- <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
@@ -12,24 +12,39 @@
       <th>Slack</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+  </thead> -->
 
-  <tbody>
+  <div class = "row">
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.kebab %></td>
-        <td><%= user.bio %></td>
-        <td><%= user.slack %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+          <div class = "col-md-5 center corsair">
+            <div class = "col-md-4">
+              <%= user.name %>
+            </div>
+            <div class = "col-md-4">
+              <%= user.email %>
+            </div>
+            <div class = "col-md-4">
+              <% if user.kebab == true %>
+                KEBAB
+              <% else %>
+                HUMMUS
+              <% end %>
+            </div>
+            <!-- <td><%= user.bio %></td>
+            <td><%= user.slack %></td> -->
+            <!-- <td><%= link_to 'Show', user %></td>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+    <br>
+    <div class = "row">
+      <div class ="col-md-12 center">
+        <button type="button" href = "<% new_user_path %>" class="btn btn-primary">CREATE NEW PROFILE</button>
+        <button type="button" href = "<%= new_user_path %>" class="btn btn-primary">CHANGE YOUR CHOICE</button>
+      </div>
+    </div>
 
-<br>
 
-<%= link_to 'New User', new_user_path %>
+<!-- <%= link_to 'New User', new_user_path %> -->
